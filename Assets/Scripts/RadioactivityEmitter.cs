@@ -38,7 +38,7 @@ namespace Sabotage {
       m_WavesRenderer.material.SetFloat("_WaveSpeed", m_WaveSpeed);
     }
 
-    void Update() {
+    void FixedUpdate() {
       bool playerHit = false;
       int wave = 1;
 

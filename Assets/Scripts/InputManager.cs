@@ -16,7 +16,7 @@ namespace Sabotage {
 
   public class InputManager : SingletonBehaviour<Sabotage, Settings, InputManager> {
 
-    void Update() {
+    void FixedUpdate() {
       if (Input.GetAxisRaw("Horizontal") != 0
         || Input.GetAxisRaw("Vertical") != 0)
       {

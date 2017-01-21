@@ -1,10 +1,9 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
 Shader "Sabotage/Ripple" {
   Properties {
-    _MainTex ("Base (RGB)", 2D) = "white" {}
+    _Color ("Color", Color) = (1, 1, 1, 1)
     _Origin ("Origin", Vector) = (0, 0, 0, 0)
     _Scale ("Scale", Range(0.1, 4)) = 1
+    _Refraction ("Refraction", Range(0, 50)) = 10
     _WaveLength ("Wave Length", Range(0.1, 4)) = 1
     _WaveDistance1 ("Wave Distance 1", float) = 0
     _WaveDistance2 ("Wave Distance 2", float) = 0
@@ -12,6 +11,8 @@ Shader "Sabotage/Ripple" {
   }
   SubShader {
     Tags {
+      "RenderType" = "Transparent"
+      "Queue" = "Overlay"
     }
     LOD 200
 
@@ -21,53 +22,90 @@ Shader "Sabotage/Ripple" {
       Pass keep
     }
 
+    GrabPass {
+      Name "BASE"
+      Tags { "LightMode" = "Always" }
+    }
+
     CGPROGRAM
     #pragma vertex vert
-    #pragma surface surf Standard alpha:blend
+    #pragma surface surf Lambert alpha:blend
     #pragma target 3.0
 
+    fixed4 LightingNoLighting(SurfaceOutput s, fixed3 lightDir, fixed atten) {
+      fixed4 c;
+      c.rgb = s.Albedo;
+      c.a = s.Alpha;
+      return c;
+    }
+
     struct Input {
-      float2 uv_MainTex;
       float4 color : COLOR;
+      float3 worldNormal;
+      float3 worldRefl;
+      float4 screenPos;
+      INTERNAL_DATA
     };
 
     const float M_PI = 3.1415926536;
 
-    sampler2D _MainTex;
+    sampler2D _GrabTexture : register(s0);
+    float4 _GrabTexture_TexelSize;
+
+    float4 _Color;
     float3 _Origin;
-    float _Scale, _WaveLength;
+    float _Scale, _Refraction, _WaveLength;
     float _WaveDistance1, _WaveDistance2, _WaveDistance3;
 
-    float waveHeight(float position, float waveDistance) {
+    float waveHeight(float2 position, float waveDistance) {
+      return waveDistance == 0
+        ? 0
+        : 1 - clamp(abs(length(position) - waveDistance) * _WaveLength, 0, 1);
+    }
+
+    float3 waveNormal(float3 direction, float3 normal, float distance, float waveDistance) {
       if (waveDistance == 0)
         return 0;
-
-      half d = position - waveDistance;
-      /* half d2 = pow(clamp(d, -_WaveLength, _WaveLength), 2);*/
-      /* [> return 1 - clamp(sin(clamp(d, 0, M_PI)), 0, 1);<]*/
-      /* [> return 1 - clamp(d, 0, 1);<]*/
-      half d2 = clamp(abs(d) * _WaveLength, 0, 1);
-      return 1 - d2;
+      else if (clamp((distance - waveDistance) * _WaveLength, 0, 1) > 0)
+        return normalize(normal + direction);
+      else if (clamp((distance - waveDistance) * _WaveLength, 0, 1) < 0)
+        return normalize(normal - direction);
+      else
+        return 0;
     }
 
-    void vert (inout appdata_full v) {
+    void vert(inout appdata_full v) {
       float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
+      float2 d = worldPos.xz - _Origin.xz;
+      float3 dir = normalize(float3(d.x, 0, d.y));
+
       float c =
-        waveHeight(length(worldPos.xz - _Origin.xz), _WaveDistance1)
-        + waveHeight(length(worldPos.xz - _Origin.xz), _WaveDistance2)
-        + waveHeight(length(worldPos.xz - _Origin.xz), _WaveDistance3);
+        waveHeight(d, _WaveDistance1)
+        + waveHeight(d, _WaveDistance2)
+        + waveHeight(d, _WaveDistance3);
+
+      float3 up = float3(0, 1, 0);
+      float3 n =
+        waveNormal(dir, up, length(d), _WaveDistance1)
+        + waveNormal(dir, up, length(d), _WaveDistance2)
+        + waveNormal(dir, up, length(d), _WaveDistance3);
 
       v.vertex.xyz += v.normal * c * _Scale;
-      v.color = float4(c, c, c, c);
+      v.color = float4(n.xyz, c);
     }
 
-    void surf (Input IN, inout SurfaceOutputStandard OUT) {
-      fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
-      /* OUT.Albedo = c.rgb;*/
-      OUT.Albedo = IN.color.rgb;
-      OUT.Alpha = IN.color.a;
-      OUT.Metallic = 0.0;
-      OUT.Smoothness = 0.5;
+    void surf (Input IN, inout SurfaceOutput OUT) {
+      float3 distort = IN.color.rgb;
+      float2 offset = distort.xz * _Refraction * _GrabTexture_TexelSize.xy;
+
+      IN.screenPos.xy = offset * IN.screenPos.z + IN.screenPos.xy;
+
+      float4 refrColor = tex2Dproj(_GrabTexture, IN.screenPos);
+
+      OUT.Emission =
+        (refrColor.rgb > 0.5) * (1 - (1-2*(refrColor.rgb-0.5)) * (1-_Color.rgb))
+        + (refrColor.rgb <= 0.5) * ((2*refrColor.rgb) * _Color.rgb);
+      OUT.Alpha = IN.color.a * _Color.a;
     }
     ENDCG
   }
