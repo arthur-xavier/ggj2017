@@ -20,6 +20,9 @@ namespace Sabotage {
     [SerializeField]
     private float m_WaveSize = 1.0f;
 
+    [SerializeField]
+    private float m_WaveDispersionLength = 5.0f;
+
     private Queue<float> m_Waves = new Queue<float>();
     private IEnumerator m_EmissionCoroutine;
     private WaitForSeconds m_WavePeriodCoroutine;
@@ -40,7 +43,7 @@ namespace Sabotage {
 
         RaycastHit hitInfo;
         if (Mathf.Abs(waveDistance.magnitude - playerDistance.magnitude) < m_WaveSize
-          && Physics.Raycast(transform.position, playerDirection, out hitInfo, waveDistance.magnitude)
+          && Physics.Raycast(Game.Data.Player.position - playerDirection * m_WaveDispersionLength, playerDirection, out hitInfo, m_WaveDispersionLength)
           && hitInfo.collider.CompareTag("Player"))
         {
           playerHit = true;

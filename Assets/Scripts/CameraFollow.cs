@@ -19,27 +19,23 @@ namespace Sabotage {
     [SerializeField]
     private float m_RotationSpeed = 1.0f;
 
-    private Transform m_Player;
-    private Transform m_Bomb;
     private Camera m_Camera;
 
     void Start() {
       m_Camera = GetComponent<Camera>();
-      m_Player = Game.Data.Player;
-      m_Bomb = Game.Data.Bomb;
     }
 
     void Update() {
-      float distance = (transform.position - m_Player.position).y;
+      float distance = (transform.position - Game.Data.Player.position).y;
       float frustumHeight = 2.0f * distance * Mathf.Tan(m_Camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
-      float playerDistanceToTarget = (m_Player.position - m_Bomb.position).magnitude;
+      float playerDistanceToTarget = (Game.Data.Player.position - Game.Data.Bomb.position).magnitude;
 
       FollowTarget(
         playerDistanceToTarget < frustumHeight * 0.5f- m_DistanceFromBorder
-        ? m_Bomb
-        : m_Player
+        ? Game.Data.Bomb
+        : Game.Data.Player
         );
-      LookAtTarget(m_Bomb);
+      LookAtTarget(Game.Data.Bomb);
     }
 
     private void FollowTarget(Transform target) {
