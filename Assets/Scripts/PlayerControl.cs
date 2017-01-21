@@ -18,7 +18,16 @@ namespace Sabotage {
       Events.AddListener<AxisInputEvent>(MovePlayer);
     }
 
+    void OnCollisionEnter(Collision c) {
+      if (c.gameObject.CompareTag("Finish")) {
+        Game.State = new WinState();
+      }
+    }
+
     void MovePlayer(AxisInputEvent e) {
+      if (!enabled)
+        return;
+
       var targetPosition = Game.Data.Bomb.position;
       var direction = (targetPosition - transform.position).normalized;
 

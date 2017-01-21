@@ -15,6 +15,8 @@ namespace Sabotage {
 
     public override IEnumerator OnStateEnter() {
       ResetPlayer();
+      ResetBomb();
+      InputManager.Instance.enabled = true;
       Time.timeScale = 1;
       Events.Raise(new StartEmissionEvent());
       yield return null;
@@ -32,6 +34,12 @@ namespace Sabotage {
       var rigidbody = m_Player.GetComponent<Rigidbody>();
       rigidbody.isKinematic = true;
       rigidbody.isKinematic = false;
+
+      Game.Data.Player.GetComponent<PlayerControl>().enabled = true;
+    }
+
+    private void ResetBomb() {
+      Game.Data.Bomb.GetComponent<RadioactivityEmitter>().enabled = true;
     }
   }
 }
