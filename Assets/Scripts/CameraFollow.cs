@@ -5,13 +5,7 @@ using UnityEngine;
 
 namespace Sabotage {
 
-  public class CameraFollow : BasicBehaviour<Settings> {
-
-    [SerializeField]
-    private Transform m_Bomb;
-
-    [SerializeField]
-    private Transform m_Player;
+  public class CameraFollow : SabotageBehaviour {
 
     [SerializeField]
     private float m_DistanceTreshold = 1.0f;
@@ -25,10 +19,14 @@ namespace Sabotage {
     [SerializeField]
     private float m_RotationSpeed = 1.0f;
 
+    private Transform m_Player;
+    private Transform m_Bomb;
     private Camera m_Camera;
 
     void Start() {
       m_Camera = GetComponent<Camera>();
+      m_Player = Game.Data.Player;
+      m_Bomb = Game.Data.Bomb;
     }
 
     void Update() {

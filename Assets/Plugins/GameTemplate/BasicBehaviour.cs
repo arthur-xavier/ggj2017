@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace GameTemplate {
 
-  public class BasicBehaviour<S> : MonoBehaviour {
+  public class BasicBehaviour<D, S> : MonoBehaviour {
 
-    public Game<S> Game {
-      get { return Game<S>.Instance; }
+    public Game<D, S> Game {
+      get { return Game<D, S>.Instance; }
     }
 
     public EventManager Events {

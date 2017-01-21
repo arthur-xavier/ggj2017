@@ -3,20 +3,25 @@ using UnityEngine;
 
 namespace GameTemplate {
 
-  public abstract class Game<S> : PersistentSingletonBehaviour<Game<S>> {
+  public abstract class Game<D, S> : PersistentSingletonBehaviour<Game<D, S>> {
 
     [SerializeField]
     [HideInInspector]
-    private GameState<S> m_State;
-    public GameState<S> State {
+    private GameState<D, S> m_State;
+    public GameState<D, S> State {
       private get { return m_State; }
       set {
         StartCoroutine(ChangeState(value));
       }
     }
 
-    [SerializeField]
     public S Settings { get; protected set; }
+
+    [SerializeField]
+    private D m_Data;
+    public D Data {
+      get { return m_Data; }
+    }
 
     protected override void Start() {
       base.Start();
@@ -26,7 +31,7 @@ namespace GameTemplate {
     protected abstract void LoadSettings();
     protected abstract void SaveSettings();
 
-    private IEnumerator ChangeState(GameState<S> state) {
+    private IEnumerator ChangeState(GameState<D, S> state) {
       if (m_State != null) {
         var oldState = m_State;
         m_State = null;

@@ -1,48 +1,58 @@
-using GameTemplate;
+using System.Collections;
 using UnityEngine;
 
 namespace Sabotage {
 
-  public class PlayerControl : BasicBehaviour<Settings> {
-
-    [SerializeField]
-    private Transform m_Target;
-
-    [SerializeField]
-    private Transform m_Camera;
+  [RequireComponent(typeof(Rigidbody))]
+  public class PlayerControl : SabotageBehaviour {
 
     [SerializeField]
     private float m_Speed = 1.0f;
 
-    [SerializeField]
-    private bool m_Radial = true;
+    Transform m_Target;
+    Transform m_Camera;
+    Rigidbody m_Rigidbody;
 
-    void Update() {
+    void Start() {
+      m_Rigidbody = GetComponent<Rigidbody>();
+      m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+      m_Target = Game.Data.Bomb;
+      m_Camera = Game.Data.Camera;
+
+      Events.AddListener<WaveHitEvent>(PlayerHit);
+    }
+
+    void FixedUpdate() {
       var targetPosition = m_Target.position;
       var direction = (targetPosition - transform.position).normalized;
 
-      var forward = m_Radial
-        // ? new Vector3(direction.x, 0, direction.z)
-        ? m_Camera.rotation * Vector3.up
-        : Vector3.forward;
-      var side = m_Radial
-        // ? Vector3.Cross(forward, Vector3.up)
-        ? m_Camera.rotation * Vector3.right
-        : Vector3.right;
+      var forward = m_Camera.rotation * Vector3.up;
+      var side = m_Camera.rotation * Vector3.right;
 
       if (Input.GetAxisRaw("Horizontal") > 0) {
-        transform.position += side * m_Speed * Time.deltaTime;
+        m_Rigidbody.AddForce(side * m_Speed);
       }
       else if (Input.GetAxisRaw("Horizontal") < 0) {
-        transform.position -= side * m_Speed * Time.deltaTime;
+        m_Rigidbody.AddForce(-side * m_Speed);
       }
 
       if (Input.GetAxisRaw("Vertical") > 0) {
-        transform.position += forward * m_Speed * Time.deltaTime;
+        m_Rigidbody.AddForce(forward * m_Speed);
       }
       else if (Input.GetAxisRaw("Vertical") < 0) {
-        transform.position -= forward * m_Speed * Time.deltaTime;
+        m_Rigidbody.AddForce(-forward * m_Speed);
       }
+    }
+
+    void PlayerHit(WaveHitEvent e) {
+      GetComponent<Renderer>().material.color = Color.red;
+      StartCoroutine(HealPlayer());
+    }
+
+    IEnumerator HealPlayer() {
+      yield return new WaitForSeconds(0.5f);
+      GetComponent<Renderer>().material.color = Color.yellow;
     }
   }
 }
