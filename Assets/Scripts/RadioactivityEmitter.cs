@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace Sabotage {
 
-  public class WaveHitEvent : SDD.Events.Event {}
-
   public class RadioactivityEmitter : SabotageBehaviour {
 
     [SerializeField]
@@ -51,7 +49,7 @@ namespace Sabotage {
       }
 
       if (!m_PlayerIsHit && playerHit) {
-        Events.Raise(new WaveHitEvent());
+        Game.State = new GameOverState();
       }
 
       m_PlayerIsHit = playerHit;

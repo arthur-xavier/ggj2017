@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace GameTemplate {
 
-  public abstract class Game<D, S> : PersistentSingletonBehaviour<Game<D, S>> {
+  public abstract class Game<D, S> : PersistentSingletonBehaviour<D, S, Game<D, S>> {
 
     [SerializeField]
     [HideInInspector]
     private GameState<D, S> m_State;
     public GameState<D, S> State {
-      private get { return m_State; }
+      get { return m_State; }
       set {
         StartCoroutine(ChangeState(value));
       }
@@ -37,8 +37,8 @@ namespace GameTemplate {
         m_State = null;
         yield return StartCoroutine(oldState.OnStateExit());
       }
-      yield return StartCoroutine(state.OnStateEnter());
       m_State = state;
+      yield return StartCoroutine(state.OnStateEnter());
     }
   }
 }

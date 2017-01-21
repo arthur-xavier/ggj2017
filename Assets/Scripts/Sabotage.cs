@@ -9,6 +9,8 @@ namespace Sabotage {
 
     public Transform Player;
 
+    public Transform PlayerRespawn;
+
     public Transform Bomb;
 
     public Transform Camera;

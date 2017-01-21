@@ -3,6 +3,6 @@ using UnityEngine;
 
 namespace Sabotage {
 
-  public class SabotageGameState : GameState<Sabotage, Settings> {
+  public class SabotageState : GameState<Sabotage, Settings> {
   }
 }

@@ -1,12 +1,21 @@
+using SDD.Events;
 using System;
 using UnityEngine;
 
 namespace GameTemplate {
 
-  public abstract class SingletonBehaviour<T>
+  public abstract class SingletonBehaviour<D, S, T>
     : MonoBehaviour
     where T : MonoBehaviour
   {
+
+    public Game<D, S> Game {
+      get { return Game<D, S>.Instance; }
+    }
+
+    public EventManager Events {
+      get { return EventManager.Instance; }
+    }
 
     private static T s_Instance;
     public static T Instance {

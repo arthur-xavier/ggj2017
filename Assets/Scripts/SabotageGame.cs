@@ -9,7 +9,7 @@ namespace Sabotage {
 
     protected override void Start() {
       base.Start();
-      State = new PlayingGameState();
+      State = new PlayingState();
     }
 
     protected override void LoadSettings() {

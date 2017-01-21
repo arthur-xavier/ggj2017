@@ -15,39 +15,17 @@ namespace Sabotage {
       m_Rigidbody = GetComponent<Rigidbody>();
       m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
-      Events.AddListener<WaveHitEvent>(PlayerHit);
+      Events.AddListener<AxisInputEvent>(MovePlayer);
     }
 
-    void FixedUpdate() {
+    void MovePlayer(AxisInputEvent e) {
       var targetPosition = Game.Data.Bomb.position;
       var direction = (targetPosition - transform.position).normalized;
 
       var forward = Game.Data.Camera.rotation * Vector3.up;
       var side = Game.Data.Camera.rotation * Vector3.right;
 
-      if (Input.GetAxisRaw("Horizontal") > 0) {
-        m_Rigidbody.AddForce(side * m_Speed);
-      }
-      else if (Input.GetAxisRaw("Horizontal") < 0) {
-        m_Rigidbody.AddForce(-side * m_Speed);
-      }
-
-      if (Input.GetAxisRaw("Vertical") > 0) {
-        m_Rigidbody.AddForce(forward * m_Speed);
-      }
-      else if (Input.GetAxisRaw("Vertical") < 0) {
-        m_Rigidbody.AddForce(-forward * m_Speed);
-      }
-    }
-
-    void PlayerHit(WaveHitEvent e) {
-      GetComponent<Renderer>().material.color = Color.red;
-      StartCoroutine(HealPlayer());
-    }
-
-    IEnumerator HealPlayer() {
-      yield return new WaitForSeconds(0.5f);
-      GetComponent<Renderer>().material.color = Color.yellow;
+      m_Rigidbody.AddForce((forward * e.Axis.y + side * e.Axis.x) * m_Speed);
     }
   }
 }
