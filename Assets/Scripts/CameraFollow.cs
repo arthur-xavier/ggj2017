@@ -25,7 +25,7 @@ namespace Sabotage {
       m_Camera = GetComponent<Camera>();
     }
 
-    void Update() {
+    void FixedUpdate() {
       float distance = (transform.position - Game.Data.Player.position).y;
       float frustumHeight = 2.0f * distance * Mathf.Tan(m_Camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
       float playerDistanceToTarget = (Game.Data.Player.position - Game.Data.Bomb.position).magnitude;
@@ -44,9 +44,12 @@ namespace Sabotage {
       var distanceToTarget = (targetPosition - position).magnitude;
       var directionToTarget = (targetPosition - position).normalized;
       var forward = new Vector3(directionToTarget.x, 0, directionToTarget.z);
-      if (distanceToTarget > m_DistanceTreshold) {
-        transform.position += forward * Mathf.SmoothStep(0, m_MaxSpeed, distanceToTarget) * Time.deltaTime;
-      }
+
+      transform.position +=
+        forward
+        * Mathf.Max(0, distanceToTarget - m_DistanceTreshold)
+        * m_MaxSpeed
+        * Time.deltaTime;
     }
 
     private void LookAtTarget(Transform target) {

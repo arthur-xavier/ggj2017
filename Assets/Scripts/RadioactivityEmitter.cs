@@ -21,18 +21,26 @@ namespace Sabotage {
     [SerializeField]
     private float m_WaveDispersionLength = 5.0f;
 
+    [SerializeField]
+    private Transform m_WavesPlane;
+
     private Queue<float> m_Waves = new Queue<float>();
     private IEnumerator m_EmissionCoroutine;
     private WaitForSeconds m_WavePeriodCoroutine;
     private bool m_PlayerIsHit = false;
+    private Renderer m_WavesRenderer;
 
     void Start() {
       Events.AddListener<StartEmissionEvent>(StartEmission);
       Events.AddListener<StopEmissionEvent>(StopEmission);
+
+      m_WavesRenderer = m_WavesPlane.GetComponent<Renderer>();
+      m_WavesRenderer.material.SetFloat("_WaveSpeed", m_WaveSpeed);
     }
 
     void Update() {
       bool playerHit = false;
+      int wave = 1;
 
       foreach (float t in m_Waves) {
         Vector3 playerDistance = Game.Data.Player.position - transform.position;
@@ -45,6 +53,11 @@ namespace Sabotage {
           && hitInfo.collider.CompareTag("Player"))
         {
           playerHit = true;
+        }
+
+        if (wave <= 3) {
+          m_WavesRenderer.material.SetFloat("_WaveDistance" + wave, (Time.time - t) * m_WaveSpeed);
+          wave++;
         }
       }
 

@@ -19,7 +19,7 @@ namespace Sabotage {
     }
 
     void OnCollisionEnter(Collision c) {
-      if (c.gameObject.CompareTag("Finish")) {
+      if (c.gameObject.CompareTag("Finish") && Game.State is PlayingState) {
         Game.State = new WinState();
       }
     }
