@@ -16,11 +16,12 @@ namespace Sabotage {
     public override IEnumerator OnStateEnter() {
       ResetPlayer();
       ResetBomb();
+      Time.timeScale = 1;
+      yield return new WaitForSeconds(0.5f);
       InputManager.Instance.enabled = true;
       TimeManager.Instance.Reset();
-      Time.timeScale = 1;
+      AudioManager.Instance.PlayRadioactivity();
       Events.Raise(new StartEmissionEvent());
-      yield return null;
     }
 
     public override IEnumerator OnStateExit() {

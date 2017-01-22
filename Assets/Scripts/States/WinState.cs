@@ -8,6 +8,8 @@ namespace Sabotage {
     public override IEnumerator OnStateEnter() {
       ResetPlayer();
       ResetEmitter();
+      AudioManager.Instance.StopPlayer();
+      AudioManager.Instance.PlaySmoke();
       yield return new WaitForSecondsRealtime(2.0f);
       Game.State = new PlayingState();
     }

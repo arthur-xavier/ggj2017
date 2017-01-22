@@ -7,6 +7,7 @@ namespace Sabotage {
 
     public override IEnumerator OnStateEnter() {
       ResetPlayer();
+      AudioManager.Instance.PlayScream();
       yield return new WaitForSecondsRealtime(1.0f);
       Game.State = new PlayingState();
     }
