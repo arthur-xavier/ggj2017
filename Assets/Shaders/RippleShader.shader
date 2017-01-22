@@ -2,7 +2,7 @@ Shader "Sabotage/Ripple" {
   Properties {
     _Color ("Color", Color) = (1, 1, 1, 1)
     _Origin ("Origin", Vector) = (0, 0, 0, 0)
-    _Scale ("Scale", Range(0.1, 4)) = 1
+    _Scale ("Scale", Range(0.1, 10)) = 1
     _Refraction ("Refraction", Range(0, 50)) = 10
     _WaveLength ("Wave Length", Range(0.1, 4)) = 1
     _WaveDistance1 ("Wave Distance 1", float) = 0
@@ -67,9 +67,9 @@ Shader "Sabotage/Ripple" {
       if (waveDistance == 0)
         return 0;
       else if (clamp((distance - waveDistance) * _WaveLength, 0, 1) > 0)
-        return normalize(normal + direction);
+        return normalize((normal + direction) * _Scale);
       else if (clamp((distance - waveDistance) * _WaveLength, 0, 1) < 0)
-        return normalize(normal - direction);
+        return normalize((normal - direction) * _Scale);
       else
         return 0;
     }

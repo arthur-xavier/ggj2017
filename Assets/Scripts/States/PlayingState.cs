@@ -29,7 +29,6 @@ namespace Sabotage {
 
     private void ResetPlayer() {
       m_Player.position = m_PlayerRespawn.position;
-      m_Player.GetComponent<Renderer>().material.color = Color.white;
 
       var rigidbody = m_Player.GetComponent<Rigidbody>();
       rigidbody.isKinematic = true;

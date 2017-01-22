@@ -13,7 +13,6 @@ namespace Sabotage {
 
     private void ResetPlayer() {
       Game.Data.Player.GetComponent<PlayerControl>().enabled = false;
-      Game.Data.Player.GetComponent<Renderer>().material.color = Color.red;
     }
   }
 }

@@ -42,14 +42,19 @@ namespace Sabotage {
       bool playerHit = false;
       int wave = 1;
 
+      Vector3 playerPosition = Game.Data.Player.position;
+      Vector3 emitterPosition = transform.position;
+      emitterPosition.y = playerPosition.y;
+
+      Vector3 playerDistance = playerPosition - emitterPosition;
+      Vector3 playerDirection = playerDistance.normalized;
+
       foreach (float t in m_Waves) {
-        Vector3 playerDistance = Game.Data.Player.position - transform.position;
-        Vector3 playerDirection = playerDistance.normalized;
         Vector3 waveDistance = playerDirection * (Time.time - t) * m_WaveSpeed;
 
         RaycastHit hitInfo;
-        if (Mathf.Abs(waveDistance.magnitude - playerDistance.magnitude) < m_WaveSize
-          && Physics.Raycast(Game.Data.Player.position - playerDirection * m_WaveDispersionLength, playerDirection, out hitInfo, m_WaveDispersionLength)
+        if (Mathf.Abs(waveDistance.magnitude - playerDistance.magnitude) <= m_WaveSize
+          && Physics.Raycast(playerPosition - playerDirection * m_WaveDispersionLength, playerDirection, out hitInfo, m_WaveDispersionLength)
           && hitInfo.collider.CompareTag("Player"))
         {
           playerHit = true;
