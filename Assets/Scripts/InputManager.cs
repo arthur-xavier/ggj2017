@@ -15,7 +15,7 @@ namespace Sabotage {
   public class PauseEvent : SDD.Events.Event {}
   public class ResumeEvent : SDD.Events.Event {}
 
-  public class InputManager : SingletonBehaviour<Sabotage, Settings, InputManager> {
+  public class InputManager : PersistentSingletonBehaviour<Sabotage, Settings, InputManager> {
 
     public Vector2 Axis { get; private set; }
 

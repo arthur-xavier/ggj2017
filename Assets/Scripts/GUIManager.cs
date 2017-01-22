@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Sabotage {
 
-  public class GUIManager : SingletonBehaviour<Sabotage, Settings, GUIManager> {
+  public class GUIManager : PersistentSingletonBehaviour<Sabotage, Settings, GUIManager> {
 
     void OnGUI() {
       if (Game.State is GameOverState) {

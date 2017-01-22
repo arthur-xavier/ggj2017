@@ -15,6 +15,7 @@ namespace Sabotage {
 
     public Transform Camera;
 
+    [HideInInspector]
     public bool IsPaused;
   }
 }
