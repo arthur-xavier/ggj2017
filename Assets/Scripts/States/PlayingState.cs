@@ -30,11 +30,12 @@ namespace Sabotage {
     private void ResetPlayer() {
       m_Player.position = m_PlayerRespawn.position;
 
-      var rigidbody = m_Player.GetComponent<Rigidbody>();
-      rigidbody.isKinematic = true;
-      rigidbody.isKinematic = false;
+      var characterController = m_Player.GetComponent<CharacterController>();
+      characterController.enabled = false;
+      characterController.enabled = true;
 
-      Game.Data.Player.GetComponent<PlayerControl>().enabled = true;
+      var playerControl = m_Player.GetComponent<PlayerControl>();
+      playerControl.enabled = true;
     }
 
     private void ResetBomb() {

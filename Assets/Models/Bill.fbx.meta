@@ -105,7 +105,313 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bill.Rig|Andar
+      takeName: Bill.Rig|Andar
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bill
+        weight: 1
+      - path: Bill.Rig
+        weight: 1
+      - path: Bill.Rig/PIroca
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Barriga2
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Costelas2
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedao.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedao.L/Dedao2.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedos.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedos.L/Dedinhos.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedao.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedao.R/Dedao2.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedos.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedos.R/Dedinhos.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Pescoco
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Pescoco/Cabeca
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L/Pe1.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L/Pe1.L/Pe2.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R/Pe1.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R/Pe1.R/Pe2.R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Bill.Rig|Idle
+      takeName: Bill.Rig|Idle
+      firstFrame: 0
+      lastFrame: 330
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bill
+        weight: 1
+      - path: Bill.Rig
+        weight: 1
+      - path: Bill.Rig/PIroca
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Barriga2
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Costelas2
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedao.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedao.L/Dedao2.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedos.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedos.L/Dedinhos.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedao.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedao.R/Dedao2.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedos.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedos.R/Dedinhos.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Pescoco
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Pescoco/Cabeca
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L/Pe1.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L/Pe1.L/Pe2.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R/Pe1.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R/Pe1.R/Pe2.R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Bill.Rig|Morte
+      takeName: Bill.Rig|Morte
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bill
+        weight: 1
+      - path: Bill.Rig
+        weight: 1
+      - path: Bill.Rig/PIroca
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Barriga2
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Costelas2
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedao.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedao.L/Dedao2.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedos.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.L/Braco.L/Antebraco.L/Mao.L/Dedos.L/Dedinhos.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedao.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedao.R/Dedao2.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedos.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Clavicula.R/Braco.R/Antebraco.R/Mao.R/Dedos.R/Dedinhos.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Pescoco
+        weight: 1
+      - path: Bill.Rig/PIroca/Barriga/Costelas/Peito/Pescoco/Cabeca
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L/Pe1.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.L/Coxa.L/Canela.L/Pe1.L/Pe2.L
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R/Pe1.R
+        weight: 1
+      - path: Bill.Rig/PIroca/Virilia.R/Coxa.R/Canela.R/Pe1.R/Pe2.R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

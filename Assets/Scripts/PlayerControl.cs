@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Sabotage {
 
-  [RequireComponent(typeof(Rigidbody))]
+  [RequireComponent(typeof(CharacterController))]
   public class PlayerControl : SabotageBehaviour {
 
     [SerializeField]
@@ -12,31 +12,43 @@ namespace Sabotage {
     [SerializeField]
     private float m_TurnSpeed = 5.0f;
 
-    Animator m_Animator;
-    Quaternion m_LookAt;
-    Rigidbody m_Rigidbody;
-
-    void Start() {
-      m_Rigidbody = GetComponent<Rigidbody>();
-      m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-
-      m_Animator = GetComponent<Animator>();
-
-      Events.AddListener<AxisInputEvent>(MovePlayer);
+    private InputManager InputManager {
+      get { return InputManager.Instance; }
     }
 
-    void OnCollisionEnter(Collision c) {
-      if (c.gameObject.CompareTag("Finish") && Game.State is PlayingState) {
+    private bool m_IsAlive = true;
+    public bool IsAlive {
+      private get { return m_IsAlive; }
+      set {
+        m_IsAlive = value;
+        m_Animator.SetBool("IsAlive", m_IsAlive);
+      }
+    }
+
+    Animator m_Animator;
+    Quaternion m_LookAt;
+    CharacterController m_Controller;
+
+    void Start() {
+      m_Controller = GetComponent<CharacterController>();
+    }
+
+    void OnEnable() {
+      m_Animator = GetComponent<Animator>();
+      m_Animator.Rebind();
+      IsAlive = true;
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+      if (hit.gameObject.CompareTag("Finish") && Game.State is PlayingState) {
         Game.State = new WinState();
       }
     }
 
-    void FixedUpdate() {
-      transform.rotation = Quaternion.Slerp(transform.rotation, m_LookAt, m_TurnSpeed * m_Rigidbody.velocity.magnitude * Time.deltaTime);
-      m_Animator.SetFloat("Velocity", m_Rigidbody.velocity.magnitude);
-    }
+    void Update() {
+      transform.rotation = Quaternion.Slerp(transform.rotation, m_LookAt, m_TurnSpeed * m_Controller.velocity.magnitude * Time.deltaTime);
+      m_Animator.SetFloat("Velocity", m_Controller.velocity.magnitude);
 
-    void MovePlayer(AxisInputEvent e) {
       if (!enabled)
         return;
 
@@ -46,10 +58,10 @@ namespace Sabotage {
       var forward = Game.Data.Camera.rotation * Vector3.up;
       var side = Game.Data.Camera.rotation * Vector3.right;
 
-      m_Rigidbody.AddForce((forward * e.Axis.y + side * e.Axis.x) * m_Speed * Time.deltaTime);
+      m_Controller.Move((forward * InputManager.Axis.y + side * InputManager.Axis.x) * m_Speed * Time.deltaTime);
 
-      if (m_Rigidbody.velocity.magnitude > 0.1f) {
-        m_LookAt = Quaternion.LookRotation(-m_Rigidbody.velocity.normalized);
+      if (m_Controller.velocity.magnitude > 0.1f) {
+        m_LookAt = Quaternion.LookRotation(-m_Controller.velocity.normalized);
       }
     }
   }

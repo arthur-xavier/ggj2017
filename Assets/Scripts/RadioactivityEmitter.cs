@@ -51,10 +51,11 @@ namespace Sabotage {
 
       foreach (float t in m_Waves) {
         Vector3 waveDistance = playerDirection * (Time.time - t) * m_WaveSpeed;
+        Vector3 rayOrigin = playerPosition - playerDirection * m_WaveDispersionLength + Vector3.up;
 
         RaycastHit hitInfo;
         if (Mathf.Abs(waveDistance.magnitude - playerDistance.magnitude) <= m_WaveSize
-          && Physics.Raycast(playerPosition - playerDirection * m_WaveDispersionLength, playerDirection, out hitInfo, m_WaveDispersionLength)
+          && Physics.Raycast(rayOrigin, playerDirection, out hitInfo, m_WaveDispersionLength)
           && hitInfo.collider.CompareTag("Player"))
         {
           playerHit = true;

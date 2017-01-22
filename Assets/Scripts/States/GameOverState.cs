@@ -12,7 +12,9 @@ namespace Sabotage {
     }
 
     private void ResetPlayer() {
-      Game.Data.Player.GetComponent<PlayerControl>().enabled = false;
+      var playerControl = Game.Data.Player.GetComponent<PlayerControl>();
+      playerControl.enabled = false;
+      playerControl.IsAlive = false;
     }
   }
 }
