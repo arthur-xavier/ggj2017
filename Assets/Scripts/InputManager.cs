@@ -32,14 +32,16 @@ namespace Sabotage {
           );
       }
 
-      if (Input.GetButtonDown("Submit")) {
-        if (!Game.Data.IsPaused) {
-          Events.Raise(new PauseEvent());
-        }
-        else {
-          Events.Raise(new ResumeEvent());
-        }
-      }
+      // Pause implies cheating
+      //
+      // if (Input.GetButtonDown("Submit")) {
+      //   if (!Game.Data.IsPaused) {
+      //     Events.Raise(new PauseEvent());
+      //   }
+      //   else {
+      //     Events.Raise(new ResumeEvent());
+      //   }
+      // }
     }
   }
 }
