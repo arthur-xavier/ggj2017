@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b1636c9ba1c94212881fe4898a718df
+guid: 68c4f5143bdde4e5a9424451b24350c9
 timeCreated: 1485043417
 licenseType: Free
 ModelImporter:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cenario
+    4300000: Mesa
   materials:
     importMaterials: 1
     materialName: 0

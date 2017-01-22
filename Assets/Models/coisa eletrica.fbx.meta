@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4b1636c9ba1c94212881fe4898a718df
-timeCreated: 1485043417
+guid: e03f8cbc50d034ec4851d27915de0f26
+timeCreated: 1485043418
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cenario
+    4300000: GloboDeEnergia
   materials:
     importMaterials: 1
     materialName: 0

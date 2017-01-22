@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: ab62b5bf0b80a4d71b2e0ad56a35b50c
+timeCreated: 1485043418
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Antebraco.L
+    100002: Antebraco.R
+    100004: Barriga
+    100006: Barriga2
+    100008: Bill
+    100010: Bill.Rig
+    100012: Braco.L
+    100014: Braco.R
+    100016: Cabeca
+    100018: Canela.L
+    100020: Canela.R
+    100022: Clavicula.L
+    100024: Clavicula.R
+    100026: Costelas
+    100028: Costelas2
+    100030: Coxa.L
+    100032: Coxa.R
+    100034: Dedao.L
+    100036: Dedao.R
+    100038: Dedao2.L
+    100040: Dedao2.R
+    100042: Dedinhos.L
+    100044: Dedinhos.R
+    100046: Dedos.L
+    100048: Dedos.R
+    100050: Mao.L
+    100052: Mao.R
+    100054: Pe1.L
+    100056: Pe1.R
+    100058: Pe2.L
+    100060: Pe2.R
+    100062: Peito
+    100064: Pescoco
+    100066: PIroca
+    100068: //RootNode
+    100070: Virilia.L
+    100072: Virilia.R
+    400000: Antebraco.L
+    400002: Antebraco.R
+    400004: Barriga
+    400006: Barriga2
+    400008: Bill
+    400010: Bill.Rig
+    400012: Braco.L
+    400014: Braco.R
+    400016: Cabeca
+    400018: Canela.L
+    400020: Canela.R
+    400022: Clavicula.L
+    400024: Clavicula.R
+    400026: Costelas
+    400028: Costelas2
+    400030: Coxa.L
+    400032: Coxa.R
+    400034: Dedao.L
+    400036: Dedao.R
+    400038: Dedao2.L
+    400040: Dedao2.R
+    400042: Dedinhos.L
+    400044: Dedinhos.R
+    400046: Dedos.L
+    400048: Dedos.R
+    400050: Mao.L
+    400052: Mao.R
+    400054: Pe1.L
+    400056: Pe1.R
+    400058: Pe2.L
+    400060: Pe2.R
+    400062: Peito
+    400064: Pescoco
+    400066: PIroca
+    400068: //RootNode
+    400070: Virilia.L
+    400072: Virilia.R
+    4300000: Bill
+    7400000: Bill.Rig|Andar
+    7400002: Bill.Rig|Idle
+    7400004: Bill.Rig|Morte
+    9500000: //RootNode
+    13700000: Bill
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

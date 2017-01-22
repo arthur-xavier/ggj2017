@@ -1,15 +1,90 @@
 fileFormatVersion: 2
-guid: 4b1636c9ba1c94212881fe4898a718df
+guid: 9376879af80424fe5ad0020d9722a36e
 timeCreated: 1485043417
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cenario
+    100000: Antebraco.L
+    100002: Antebraco.R
+    100004: Barriga
+    100006: Barriga2
+    100008: //RootNode
+    100010: Bill
+    100012: Bill.Rig
+    100014: Braco.L
+    100016: Braco.R
+    100018: Cabeca
+    100020: Canela.L
+    100022: Canela.R
+    100024: Clavicula.L
+    100026: Clavicula.R
+    100028: Costelas
+    100030: Costelas2
+    100032: Coxa.L
+    100034: Coxa.R
+    100036: Dedao.L
+    100038: Dedao.R
+    100040: Dedao2.L
+    100042: Dedao2.R
+    100044: Dedinhos.L
+    100046: Dedinhos.R
+    100048: Dedos.L
+    100050: Dedos.R
+    100052: Mao.L
+    100054: Mao.R
+    100056: Pe1.L
+    100058: Pe1.R
+    100060: Pe2.L
+    100062: Pe2.R
+    100064: Peito
+    100066: Pescoco
+    100068: PIroca
+    100070: Virilia.L
+    100072: Virilia.R
+    400000: Antebraco.L
+    400002: Antebraco.R
+    400004: Barriga
+    400006: Barriga2
+    400008: //RootNode
+    400010: Bill
+    400012: Bill.Rig
+    400014: Braco.L
+    400016: Braco.R
+    400018: Cabeca
+    400020: Canela.L
+    400022: Canela.R
+    400024: Clavicula.L
+    400026: Clavicula.R
+    400028: Costelas
+    400030: Costelas2
+    400032: Coxa.L
+    400034: Coxa.R
+    400036: Dedao.L
+    400038: Dedao.R
+    400040: Dedao2.L
+    400042: Dedao2.R
+    400044: Dedinhos.L
+    400046: Dedinhos.R
+    400048: Dedos.L
+    400050: Dedos.R
+    400052: Mao.L
+    400054: Mao.R
+    400056: Pe1.L
+    400058: Pe1.R
+    400060: Pe2.L
+    400062: Pe2.R
+    400064: Peito
+    400066: Pescoco
+    400068: PIroca
+    400070: Virilia.L
+    400072: Virilia.R
+    4300000: Bill
+    7400000: Bill.Rig|Andar
+    7400002: Bill.Rig|Idle
+    7400004: Bill.Rig|Morte
+    9500000: //RootNode
+    13700000: Bill
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,7 +147,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
