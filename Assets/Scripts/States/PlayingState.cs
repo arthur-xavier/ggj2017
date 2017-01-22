@@ -17,6 +17,7 @@ namespace Sabotage {
       ResetPlayer();
       ResetBomb();
       InputManager.Instance.enabled = true;
+      TimeManager.Instance.Reset();
       Time.timeScale = 1;
       Events.Raise(new StartEmissionEvent());
       yield return null;
