@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2fc5313877cfb492c9ac2e4154ffc353
-timeCreated: 1485043417
+guid: 6bc2074e4dec53e4189fb38c4f9882b8
+timeCreated: 1485065702
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Entrada.001
+    4300000: Entrada
   materials:
     importMaterials: 1
     materialName: 0
@@ -56,7 +56,6 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -67,10 +66,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
-    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1

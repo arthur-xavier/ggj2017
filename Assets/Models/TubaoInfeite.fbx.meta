@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: 9586d0087c34eb54e8b7598030bb3de2
-timeCreated: 1485017044
+guid: 57e89be3244c4bb4599fc4ea3e78875c
+timeCreated: 1485070148
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cenario
-    100002: Entrada
-    100004: //RootNode
-    100006: PC(Entrada)
-    400000: Cenario
-    400002: Entrada
-    400004: //RootNode
-    400006: PC(Entrada)
-    2300000: Cenario
-    2300002: Entrada
-    2300004: PC(Entrada)
-    3300000: Cenario
-    3300002: Entrada
-    3300004: PC(Entrada)
-    4300000: PC(Entrada)
-    4300002: Entrada
-    4300004: Cenario
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: TuboEnfeite
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +34,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
