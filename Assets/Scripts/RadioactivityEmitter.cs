@@ -24,6 +24,9 @@ namespace Sabotage {
     [SerializeField]
     private Transform m_WavesPlane;
 
+    [SerializeField]
+    private ParticleSystem m_ShockParticles;
+
     private Queue<float> m_Waves = new Queue<float>();
     private IEnumerator m_EmissionCoroutine;
     private WaitForSeconds m_WavePeriodCoroutine;
@@ -36,6 +39,14 @@ namespace Sabotage {
 
       m_WavesRenderer = m_WavesPlane.GetComponent<Renderer>();
       m_WavesRenderer.material.SetFloat("_WaveSpeed", m_WaveSpeed);
+    }
+
+    void OnEnable() {
+      m_ShockParticles.Play();
+    }
+
+    void OnDisable() {
+      m_ShockParticles.Stop();
     }
 
     void FixedUpdate() {
