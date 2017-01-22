@@ -29,13 +29,14 @@ namespace Sabotage {
     Quaternion m_LookAt;
     CharacterController m_Controller;
 
-    void Start() {
-      m_Controller = GetComponent<CharacterController>();
-    }
-
     void OnEnable() {
       m_Animator = GetComponent<Animator>();
       m_Animator.Rebind();
+      m_Animator.SetFloat("Velocity", 0.0f);
+
+      m_Controller = GetComponent<CharacterController>();
+      m_Controller.Move(Vector3.zero);
+
       IsAlive = true;
     }
 
