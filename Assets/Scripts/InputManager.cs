@@ -12,11 +12,12 @@ namespace Sabotage {
     }
   }
 
-  public class SkipEvent : SDD.Events.Event {}
+  public class PauseEvent : SDD.Events.Event {}
+  public class ResumeEvent : SDD.Events.Event {}
 
   public class InputManager : SingletonBehaviour<Sabotage, Settings, InputManager> {
 
-    void FixedUpdate() {
+    void Update() {
       if (Input.GetAxisRaw("Horizontal") != 0
         || Input.GetAxisRaw("Vertical") != 0)
       {
@@ -27,8 +28,13 @@ namespace Sabotage {
           );
       }
 
-      if (Input.GetButton("Jump") || Input.GetButton("Cancel")) {
-        Events.Raise(new SkipEvent());
+      if (Input.GetButtonDown("Submit")) {
+        if (!Game.Data.IsPaused) {
+          Events.Raise(new PauseEvent());
+        }
+        else {
+          Events.Raise(new ResumeEvent());
+        }
       }
     }
   }

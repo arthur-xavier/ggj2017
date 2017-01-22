@@ -34,7 +34,7 @@ namespace Sabotage {
       var forward = Game.Data.Camera.rotation * Vector3.up;
       var side = Game.Data.Camera.rotation * Vector3.right;
 
-      m_Rigidbody.AddForce((forward * e.Axis.y + side * e.Axis.x) * m_Speed);
+      m_Rigidbody.AddForce((forward * e.Axis.y + side * e.Axis.x) * m_Speed * Time.deltaTime);
     }
   }
 }

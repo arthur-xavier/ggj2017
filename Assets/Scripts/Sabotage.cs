@@ -14,5 +14,7 @@ namespace Sabotage {
     public Transform Bomb;
 
     public Transform Camera;
+
+    public bool IsPaused;
   }
 }
