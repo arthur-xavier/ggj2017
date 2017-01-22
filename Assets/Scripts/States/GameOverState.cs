@@ -11,6 +11,11 @@ namespace Sabotage {
       Game.State = new PlayingState();
     }
 
+    public override IEnumerator OnStateExit() {
+      PlayerManager.Instance.SpawnCorpse();
+      yield return null;
+    }
+
     private void ResetPlayer() {
       var playerControl = Game.Data.Player.GetComponent<PlayerControl>();
       playerControl.enabled = false;

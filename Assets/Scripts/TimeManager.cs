@@ -27,7 +27,6 @@ namespace Sabotage {
 
     private IEnumerator Count() {
       while (m_Time > 0) {
-        Debug.Log(m_Time);
         yield return new WaitForSeconds(1.0f);
         m_Time -= 1.0f;
       }
